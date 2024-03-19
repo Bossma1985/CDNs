@@ -2,26 +2,15 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rendimiento Anual de Ganancias vs Gastos</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
-            font-family: Arial, sans-serif;
-        }
-        .container {
-            width: 80%;
-            max-width: 650px;
-        }
-    </style>
 </head>
-<body>
+<body class="bg-gray-100 flex items-center justify-center min-h-screen">
 
-<div class="container">
-    <h2>Rendimiento Anual de Ganancias vs Gastos</h2>
+<div class="container max-w-4xl mx-auto bg-white p-8 rounded-lg shadow">
+    <h2 class="text-xl md:text-2xl font-semibold text-gray-800 mb-4 text-center">Rendimiento Anual de Ganancias vs Gastos</h2>
     <canvas id="myChart"></canvas>
 </div>
 
@@ -35,12 +24,14 @@ const myChart = new Chart(ctx, {
             label: 'Ganancias',
             data: [12000, 19000, 17000, 22000, 23000, 25000, 27000, 30000, 32000, 34000, 36000, 38000],
             borderColor: 'rgb(75, 192, 192)',
+            backgroundColor: 'rgba(75, 192, 192, 0.2)',
             tension: 0.1
         },
         {
             label: 'Gastos',
             data: [8000, 12000, 10500, 11000, 14000, 17000, 16000, 18000, 19000, 20000, 21000, 22000],
             borderColor: 'rgb(255, 99, 132)',
+            backgroundColor: 'rgba(255, 99, 132, 0.2)',
             tension: 0.1
         }]
     },
@@ -56,7 +47,3 @@ const myChart = new Chart(ctx, {
 
 </body>
 </html>
-
-
-
-
