@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Comparación Trimestral de Ganancias vs Gastos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@3.0.24/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body class="bg-blue-50 flex flex-col items-center justify-center py-10">
+
+<div class="container max-w-4xl p-6 bg-white rounded-lg shadow-md">
+    <h2 class="mb-4 text-2xl text-center font-semibold text-gray-700">Comparación Trimestral de Ganancias vs Gastos</h2>
+    <canvas id="comparisonChart"></canvas>
+</div>
+
+<script>
+const ctx = document.getElementById('comparisonChart').getContext('2d');
+const comparisonChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['1er Trimestre', '2do Trimestre', '3er Trimestre', '4to Trimestre'],
+        datasets: [{
+            label: 'Ganancias',
+            data: [20000, 25000, 30000, 35000],
+            backgroundColor: 'rgba(13, 110, 253, 0.5)',
+            borderColor: 'rgba(13, 110, 253, 1)',
+            borderWidth: 1
+        }, {
+            label: 'Gastos',
+            data: [15000, 17000, 19000, 21000],
+            backgroundColor: 'rgba(220, 53, 69, 0.5)',
+            borderColor: 'rgba(220, 53, 69, 1)',
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
